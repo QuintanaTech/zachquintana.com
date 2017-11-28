@@ -6,25 +6,32 @@ import { humanize } from 'inflected'
 
 const InputWidget = function (props) {
     let el = null;
+    let { className, label, ...rest } = props
+
     if ('textarea' === props.type) {
-        el = <TextArea name={props.name}/>
+        el = <TextArea {...rest}/>
     } else {
-        el = <Input name={props.name}/>
+        el = <Input {...rest}/>
     }
 
     return (
-        <div className={"form-group "+props.className}>
-            <label>{props.label ? props.label : humanize(props.name)}</label>
+        <div className={"form-group "+className}>
+            <label>{label ? label : humanize(props.name)}</label>
             {el}
+            {true === props.error &&
+                <div className={'invalid-feedback'}>
+                    Please provide a valid {props.name}.
+                </div>
+            }
         </div>
     )
 }
 
-Input.propTypes = {
+InputWidget.propTypes = {
     ...Input.propTypes,
     label: PropTypes.string
 }
-Input.defaultProps = {
+InputWidget.defaultProps = {
     ...Input.defaultProps
 }
 

@@ -1,20 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { resolveClassName } from './utility'
 
 const Input = function (props) {
+    let { className, error, ...rest } = props
+
     return (
-        <input type={props.type} className={'form-control '+props.className} name={props.name} />
+        <input className={resolveClassName(className, error)} {...rest} />
     )
 }
 
 Input.propTypes = {
     name: PropTypes.string.isRequired,
     type: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    error: PropTypes.bool
 }
 Input.defaultProps = {
     type: 'text',
-    className: ''
+    className: '',
+    error: false
 }
 
 export default Input

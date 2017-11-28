@@ -1,8 +1,9 @@
 {
   "scripts": {
-    "dev": "webpack-dev-server --open",
-    "build": "webpack -p",
-    "build-dev": "webpack -w"
+    "dev": "./node_modules/.bin/webpack-dev-server --open",
+    "build": "./node_modules/.bin/webpack -p",
+    "build-dev": "./node_modules/.bin/webpack -w",
+    "deploy": "yarn run build && firebase deploy"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -13,6 +14,7 @@
   },
   "dependencies": {
     "aphrodite": "^1.2.3",
+    "axios": "^0.17.1",
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -39,6 +41,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "twitter-widgets": "^1.0.0",
+    "underscore": "^1.8.3",
     "webpack": "^3.5.5"
   }
 }
