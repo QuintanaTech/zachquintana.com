@@ -5,9 +5,7 @@ cache:
   yarn: true
   directories:
     - node_modules
-before_install:
-  - yarn install
-install:
+before_deploy:
   - yarn run build
 deploy:
   - provider: firebase
