@@ -1,3 +1,12 @@
+language: node_js
+node_js:
+  - "iojs"
+cache:
+  yarn: true
+  directories:
+    - node_modules
+before_script:
+  - yarn install
 deploy:
   - provider: firebase
     token:
