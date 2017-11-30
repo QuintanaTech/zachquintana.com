@@ -7,12 +7,9 @@ cache:
     - node_modules
 before_deploy:
   - yarn run build
-  - ls ./
-  - ls ./public
-  - ls ./public/app
 deploy:
-  skip_cleanup: true
   - provider: firebase
+    skip_cleanup: true
     token:
       secure: "nORswv2cchp9Xd2VR4kEhC50LNoaScgsZHbgJq/MXZY1GEaHzuBVxZ292zteYnGt77scTExGPEYBDO33FUTUasMVG+TT2xKue50X1KLPH9/Fcp3dImjkHqucSMpeMtnM6kJtAclKg45Q8mt/L3JAAPqjsc3FXGOEog3E68aG0Let5/Ho2fskncTUlaC9Ikj1m5t32KLl96Jqd28NkHZF12axzO07OnNHvYbRQv0e5yHR5bjBXCwHZoaLtMDvQ0t+9K8j8UM+pABvhtgdw3NsBovxgzxxkbPZaREZoo4dI8j4gINuuudJNEeuUK3A9vva3YcSUFikynx/pVn2XFfzSaWqLFQ5RnhL2FjHyVyF/Ztkzz51/vMT6AmrdZennW3z58dzhCpC4QyEJAB8o//11HPO+IkUsnXCkYussJn09s/ls6urvTymIcTKd11YvzFUet4oVTs01s6zuNpiebJMvKH2hNW4gxbhgxfvz36nHkAw6UO+btqst5ZVOd67dp1vigcMvDAviI3CqCHMEZasvfP5d7lbeIgusGNIEYd7QEQrW/8anSmVrQMRpwy5h6YJQMRBJHGUKe9L245zZcWTUS6xIr9hsCbgfcVWx1k8SW7tXV+n5vVyAGfrmQjhduVu/1mxHPKmjuN+2+c2qJ8U3wEFuDQDNdb7X2wI4916114="
     project: "zach-quintana-site"
