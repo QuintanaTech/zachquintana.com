@@ -1,7 +1,7 @@
 import "./assets/css/app.scss";
 
 import React from 'react'
-import store from './store'
+import createAppStore from './store'
 import ReactDOM from 'react-dom'
 import createHistory from 'history/createBrowserHistory'
 import Main from './components/main'
@@ -14,16 +14,16 @@ import ContactPanel from './components/panels/contact_panel'
 import SocialPanel from './components/panels/social_panel'
 import TwitterPanel from './components/panels/twitter_panel'
 
-
 const history = createHistory({
     basename: '/#'
 })
+const store   = createAppStore(history)
 
 ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
             <div>
-                <Navigation/>
+                <Navigation history={history}/>
                 <div className={"container-fluid"}>
                     <Main>
                         <Route exact path="/" component={ContactPanel}/>
