@@ -9,6 +9,7 @@ before_deploy:
   - yarn run build
   - ls ./
   - ls ./public
+  - ls ./public/app
 deploy:
   - provider: firebase
     token:
