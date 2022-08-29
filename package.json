@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --open",
-    "build": "./node_modules/.bin/webpack -p",
-    "build-dev": "./node_modules/.bin/webpack -w",
-    "deploy": "yarn run build && firebase deploy"
+    "dev": "webpack-dev-server --open",
+    "build": "webpack -p",
+    "build-dev": "webpack -w",
+    "deploy": "npm run build && firebase deploy"
   },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
