@@ -69,16 +69,16 @@ class Navigation extends React.Component {
                                 Contact
                             </Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to={'/twitter'}>
-                                Twitter
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="http://www.quintana.tech/portfolio" target="_blank">
-                                Portfolio
-                            </a>
-                        </li>
+                        {/*<li className="nav-item">*/}
+                        {/*    <Link className="nav-link" to={'/twitter'}>*/}
+                        {/*        Twitter*/}
+                        {/*    </Link>*/}
+                        {/*</li>*/}
+                        {/*<li className="nav-item">*/}
+                        {/*    <a className="nav-link" href="http://www.quintana.tech/portfolio" target="_blank">*/}
+                        {/*        Portfolio*/}
+                        {/*    </a>*/}
+                        {/*</li>*/}
                     </ul>
                 </div>
             </nav>
