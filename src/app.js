@@ -9,6 +9,7 @@ import Navigation from './components/navigation'
 import { Route } from 'react-router'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
+import ReactGA from 'react-ga'
 
 import ContactPanel from './components/panels/contact_panel'
 import SocialPanel from './components/panels/social_panel'
@@ -18,6 +19,9 @@ const history = createHistory({
     basename: '/#'
 })
 const store   = createAppStore(history)
+
+ReactGA.initialize('UA-18379956-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 ReactDOM.render(
     <Provider store={store}>
