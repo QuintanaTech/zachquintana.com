@@ -15,11 +15,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 14
+      - name: Install Firebase Tools
+        run: curl -sL https://firebase.tools | bash
       - run: npm ci
       - run: npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_TOKEN }}"
-          expires: 30d
-          projectId: 'zach-quintana-site'
+      - run: firebase deploy --token "$FIREBASE_TOKEN" --project zach-quintana-site
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
