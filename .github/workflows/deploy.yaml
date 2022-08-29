@@ -1,29 +1,24 @@
+name: Deploy
 
+on:
+  push:
+    branches:
+      - master
 
-  IntelliJ IDEA
-    PhpStorm
-    WebStorm
-  name: Deploy
-
-  on:
-    push:
-      branches:
-        - master
-
-  jobs:
-    build:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-        - name: Use Node.js 14
-          uses: actions/setup-node@v3
-          with:
-            node-version: 14
-        - run: npm ci
-        - run: npm run build
-        - uses: FirebaseExtended/action-hosting-deploy@v0
-          with:
-            repoToken: "${{ secrets.GITHUB_TOKEN }}"
-            firebaseServiceAccount: "${{ secrets.FIREBASE_TOKEN }}"
-            expires: 30d
-            projectId: 'zach-quintana-site'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 14
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - run: npm ci
+      - run: npm run build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_TOKEN }}"
+          expires: 30d
+          projectId: 'zach-quintana-site'
